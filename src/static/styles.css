@@ -82,8 +82,31 @@ section h3 {
 }
 
 .activity-card .participants ul {
-  list-style-type: disc;
-  padding-left: 20px;
+  list-style-type: none; /* hide bullets */
+  padding-left: 0;
+}
+
+/* Participant list item layout */
+.activity-card .participants li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Delete button next to participant */
+.participant-delete {
+  background: transparent;
+  border: none;
+  color: #c62828;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px 8px;
+}
+
+.participant-delete:hover {
+  color: #8e0000;
 }
 
 .form-group {
