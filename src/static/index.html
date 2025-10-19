@@ -58,29 +58,5 @@
     </footer>
 
     <script src="app.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", async () => {
-        const response = await fetch("/activities");
-        const activities = await response.json();
-        const activitiesList = document.getElementById("activities-list");
-        activitiesList.innerHTML = ""; // Limpiar el contenido existente
-
-        for (const [activityName, details] of Object.entries(activities)) {
-          const activityCard = document.createElement("div");
-          activityCard.className = "activity-card";
-          activityCard.innerHTML = `
-            <h4>${activityName}</h4>
-            <p>${details.description}</p>
-            <div class="participants">
-              <strong>Participants:</strong>
-              <ul>
-                ${details.participants.map(participant => `<li>${participant}</li>`).join('')}
-              </ul>
-            </div>
-          `;
-          activitiesList.appendChild(activityCard);
-        }
-      });
-    </script>
   </body>
 </html>
